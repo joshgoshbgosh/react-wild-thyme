@@ -36,3 +36,8 @@ p{
 li {
   list-style-type: none;
 }
+.addToOrder{
+  display: inline-block;
+  position: relative;
+  left: 165px;
+}

@@ -46,7 +46,10 @@ componentDidMount() {
   // [Item: Steak, Price: 20.00, <img src="https://i.imgur.com/rx3f5cv.jpg">],[Item: Cheese Burger, Price: 15.00, <img src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Bacon-Cheeseburgers-with-Fry-Sauce_EXPS_THAM19_232817_B11_08_3b.jpg">]]
     return (
       <React.Fragment>
-        <FoodList menu={this.state.menu} />
+      <div style={{display:"flex"}}>
+        <FoodList cart={this.state.cart} menu={this.state.menu} />
+        <Order cart={this.state.cart} />
+        </div>
       </React.Fragment>
     )
   }
