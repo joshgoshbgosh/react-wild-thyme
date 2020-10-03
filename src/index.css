@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.foodmenu {
+
+  border: 2px solid;
+}
+
+img {
+  width: 100%;
+
+}
+h1 {
+  border-bottom: 2px solid;
+  text-align: center;
+
+}
+
+h3 {
+  border-bottom: 2px solid;
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}

@@ -12,13 +12,14 @@ class FoodList extends Component {
   render() {
     const menu = this.props.menu.map((item, index) => (
       <li key={index}>
+        <img src={item.image_url}/>
         <h3>{item.name}</h3>
         <p>{item.price}</p>
-        <img src={item.image_url}/>
+
       </li>
     ));
     return(
-      <div>
+      <div className=" foodmenu col-3">
         <h1>Cafe Menu</h1>
         <ul>{menu}</ul>
       </div>
