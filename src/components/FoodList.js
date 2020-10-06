@@ -7,17 +7,10 @@ constructor(props){
   super(props)
 
   this.state = {
-    cart: [],
+  
   }
-  this.handleClick = this.handleClick.bind(this)
-}
-handleClick(food){
-  // is a shallow copy,  takes current state of order and adds to it
-  let order = [...this.state.cart, food];
-  this.setState({cart: order});
-  console.log("food",food);
-}
 
+}
 
 
 
@@ -28,7 +21,7 @@ handleClick(food){
         <img src={item.image_url}/>
         <h3>{item.name}</h3>
         <p>{item.price}</p>
-        <button className="addToOrder" onClick={()=>{this.handleClick(item)} }>Add To Order</button>
+        <button className="addToOrder" onClick={()=>{this.props.addToOrder(item)} }>Add To Order</button>
       </li>
     ));
     return(

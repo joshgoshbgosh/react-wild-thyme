@@ -9,8 +9,11 @@ constructor (props){
   super(props)
    this.state = {
      menu: [],
+     cart: [],
    }
-}
+   this.addToOrder = this.addToOrder.bind(this);
+   this.removeOrder = this.removeOrder.bind(this);
+ }
 
   // build your componentDidMount method
   // use it to add static menu items to the empty menu array on state
@@ -39,6 +42,22 @@ componentDidMount() {
   this.setState({menu});
 
 };
+addToOrder(food){
+  // is a shallow copy,  takes current state of order and adds to it
+  // is in parent so that order has access to state
+  let order = [...this.state.cart, food];
+  this.setState({cart: order});
+  console.log("food",food);
+}
+removeOrder(item){
+  console.log(item);
+  let cart = [...this.state.cart];
+  const index = cart.indexOf(item);
+  cart.splice(index, 1);
+  this.setState({ cart });
+
+}
+
 
   render() {
     // pass menu items on state down to FoodList
@@ -47,8 +66,8 @@ componentDidMount() {
     return (
       <React.Fragment>
       <div style={{display:"flex"}}>
-        <FoodList cart={this.state.cart} menu={this.state.menu} />
-        <Order cart={this.state.cart} />
+        <FoodList  menu={this.state.menu} addToOrder={this.addToOrder} />
+         <Order cart={this.state.cart} removeOrder={this.removeOrder} />
         </div>
       </React.Fragment>
     )
